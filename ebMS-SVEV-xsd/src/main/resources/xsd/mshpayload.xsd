@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://jmsh.org/mshpayload" targetNamespace="http://jmsh.org/mshpayload" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MSHPayload">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MSHPart" type="ns1:MSHPart" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="MSHPart">
+		<xs:sequence>
+			<xs:element name="Data">
+				<xs:complexType mixed="true">
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:any/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string"/>                
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="type" type="xs:string"/>
+		<xs:attribute name="desc" type="xs:string"/>
+		<xs:attribute name="mimeType" type="xs:string"/>
+		<xs:attribute name="encoding" type="xs:string"/>
+		<xs:attribute name="filename" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

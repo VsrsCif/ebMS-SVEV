@@ -1,0 +1,36 @@
+Aplikacija ebMS-SVEV je demo aplikacija namenjena programerjem, ki želijo podpreti protkol SVEV 2.0.
+
+Uporabljene tehnologije
+- demo aplikacija uporablja maven in jdk 1.8.
+- za aplikacijski strežnik je uporabljen Jetty,
+- za vizalizacijo apacheFOP,
+- apache-cxf za ws-security (in WS-ReliableMessaging)
+
+
+Projekt vsebuje pod projekta
+- msh-xsd: vsebuje sheme in jabx objekte za oasis, w3c itd.
+- msh-AS4: demo primer:
+
+Aplikacija se zažene  s pomočjo mvn ukaza:
+
+mvn clean install
+
+Pri tem se izgradijo vsi podprojekti, dodatno se v msh-AS4 požene tudi
+junit test, ki "postavi" svev-msh server (jetty) ter pošlje pošiljko:
+
+"Pozdravljeni! To je testno sporočilo.\n\nLep pozdrav"
+
+iz  naslova: atestko.uporabnik@e-box-a.si na naslov
+btestko.uporabnik@e-box-a.si-a.si
+
+Na način:  LegalDelivery_ZPP
+
+Ko btestko.uporabnik@e-box-a.si-a.si prejme pošiljko, posreduje
+"Povratnico" ter kot odgovor prejme ključ za dekripcijo pošiljke.
+
+
+Pošiljke se beležijo v mapi:
+- SVEVDemo/msh-AS4/msh/inbox
+
+beleži dnevnik izhodnih in dohodnih klicev.
+

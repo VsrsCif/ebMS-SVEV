@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"  
+           targetNamespace="http://jmsh.org/svevencryptionkey">
+	<xs:element name="SVEVEncryptionKey">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="KeyValue" type="xs:base64Binary"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required" type="xs:string"/>
+                        <xs:attribute name="keyAlgorithm" type="xs:string"/>
+                        <xs:attribute name="keyFormat" type="xs:string"/>                        
+                        <xs:attribute name="ivByteParameter" type="xs:base64Binary"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
